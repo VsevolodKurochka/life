@@ -1,0 +1,28 @@
+/* =====================
+Start:  HEADER
+======================== */
+.header {
+	@extend .cf;
+	padding-top: 30px;
+	padding-bottom: 60px;
+	min-height: 50px;
+	@include bg('../img/header.jpg', 60% center);
+	&-container-text{
+		margin-top: 30px;
+	}
+	@include resp-min(sm){
+		&-container-text{
+			margin-top: 70px;
+		}
+	}
+	@include resp-min(md){
+		padding-top: 55px;
+		padding-bottom: 230px;
+		&-container-text{
+			margin-top: 160px;
+		}
+	}
+}
+/* =====================
+End:  HEADER
+======================== */

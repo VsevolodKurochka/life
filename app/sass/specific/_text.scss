@@ -1,0 +1,130 @@
+$h1-font-sizes: (
+  xs:   45px,
+  sm:   55px,
+  md:   60px
+);
+$h2-font-sizes: (
+  sm:   20px
+);
+$vtitle: (
+  xs:   32px,
+  sm:   37px,
+  md:   42px
+);
+.h1{
+  font-size: 28px;
+  line-height: 1.1;
+  margin: 20px 0;
+  @extend .bold;
+  @extend .ttu;
+  @include font-size($h1-font-sizes);
+}
+.h2{
+  font-size: 17px;
+  @include font-size($h2-font-sizes);
+  @extend .regular;
+  &.bigger{
+    @include resp-min(sm){
+      font-size: 22px;
+    }
+    @include resp-min(md){
+      font-size: 24px;
+    }
+  }
+}
+.vtitle{
+  line-height: 1.2;
+  font-size: 28px;
+  @include font-size($vtitle);
+  &-line{
+    position: relative;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    &:after{
+      @extend .pseudo;
+      left: 0;
+      top: 100%;
+      width: 39px;
+      height: 2px;
+      background-color: setColor(corp);
+    }
+    &-big{
+      padding-bottom: 15px;
+      margin-bottom: 50px;
+      &:after{
+        width: 102px;
+        height: 4px;
+      }
+    }
+  }
+  @include resp-max(sm){
+    &-line{
+      text-align: center;
+      &:after{
+        left: 50%;
+        margin-left: -19.5px;
+      }
+      &-big{
+        &:after{
+          margin-left: -51px;
+        }
+      }
+    }
+  }
+}
+.h{
+  &4{
+    color: #272727;
+    &.s-m{
+      margin-bottom: 25px;
+    }
+    &.b-m{
+      margin-bottom: 40px;
+    }
+  }
+}
+@include resp-min(sm){
+  .h3{
+    &.m-m{
+      margin-bottom: 50px;
+    }
+    &.b-m{
+      margin-bottom: 70px;
+    }
+  }
+}
+
+.t{
+  &tu{
+    text-transform: uppercase;
+  }
+  &du{
+    text-decoration: underline;
+  }
+  &dn{
+    text-decoration: none;
+  }
+}
+.text{
+  &-center{
+    text-align: center;
+  }
+  &-left{
+    text-align: left;
+  }
+  &-right{
+    text-align: right;
+  }
+}
+@each $br-name, $br-value in $breakpoints{
+  @include resp-max($br-name){
+    .max-#{$br-name}-center{
+      text-align: center;
+    }
+  }
+  @include resp-min($br-name){
+    .min-#{$br-name}-right{
+      text-align: right;
+    }
+  }
+}

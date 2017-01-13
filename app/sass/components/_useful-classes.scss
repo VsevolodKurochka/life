@@ -1,0 +1,35 @@
+.transition{
+  @include transitionMake();
+}
+.pseudo{
+  @include pseudo();
+}
+.vertical-image{
+  &:before{
+    content: "";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;   
+  }
+  img{
+    max-height: 100%;
+    vertical-align: middle;   
+  }
+}
+.color{
+  &-light{
+    color: setColor(light);
+  }
+}
+.bg{
+  &-grey{
+    &--light{
+      background-color: #f2f2f2;
+    }
+  }
+}
+%shadow{
+  background-color: setColor(light);
+  box-shadow: 0 32px 81px rgba(0,1,1,.2);
+  border-radius: 3px;
+}

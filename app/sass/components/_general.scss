@@ -1,0 +1,36 @@
+body{
+  color: setColor(black);
+  @extend .lato;
+  @extend .regular;
+  font-size: 18px;
+  line-height: 1.42857143;
+  @include resp-min(sm){
+    font-size: 20px;
+  }
+}
+img{
+  @extend .block-inline;
+  max-width: 100%;
+}
+input{
+  &:focus{
+    &::-webkit-input-placeholder{
+      color: transparent;
+    }
+    &:-moz-placeholder {
+      color: transparent;
+    }
+    &::-moz-placeholder {
+      color: transparent;
+    }
+    &:-ms-input-placeholder {
+      color: transparent;
+    }
+  }
+}
+a,button{
+  cursor: pointer;
+}
+strong,.strong,b,.b{
+  @extend .blacks !optional;
+}

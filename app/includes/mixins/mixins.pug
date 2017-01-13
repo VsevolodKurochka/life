@@ -1,0 +1,49 @@
+mixin item(href, active)
+	if(active)
+		li(class="active"): a( href=href ): block
+	else	
+		li: a( href=href ): block
+mixin title
+	.cf
+		h3.vtitle.vtitle-line.vtitle-line-big: block
+mixin button(buttonClass, single, singleCenter, modalTarget)
+	- buttonClass = buttonClass || 'vbtn vbtn-effect-shutter-vertical-out vbtn-corp'
+	- var center = ''
+	if(modalTarget != null)
+		- modalTarget = modalTarget
+
+	else
+		- modalTarget = "#modalform"
+
+	if(singleCenter == "center")
+		- center = 'text-center'
+
+	if(single == "single")
+		if(modalTarget == false)
+			.vbtn-single(class=center)
+				button(class=buttonClass): block
+		else
+			.vbtn-single(class=center)
+				button(class=buttonClass data-modal="vmodal" data-modal-target=modalTarget): block
+	else
+		if(modalTarget == false)
+			button(class=buttonClass): block
+		else
+			button(class=buttonClass data-modal="vmodal" data-modal-target=modalTarget): block
+mixin column(image, text)
+	.vak-xs-12.vak-md-4.column-wrap
+		.column
+			.column-header
+				.column-header-img
+					img(src=image)
+				.column-header-text
+					span #{text}
+			.column-body
+				p: block
+mixin work(image, text)
+	.vak-xs-12.vak-md-4.working-wrap
+		.working-image
+			img(src=image)
+		.working-title
+			h4.h4.vtitle-line #{text}
+		.working-body.text-block: block

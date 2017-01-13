@@ -1,0 +1,82 @@
+doctype html
+html(lang="ru")
+	head
+		title Жизнь на гране
+		meta(name="description" content="")
+		include includes/header/head
+		include includes/mixins/mixins
+	body
+		header.header.color-light
+			.vcontainer
+				include includes/nav/nav
+			.vcontainer.header-container-text
+				.vrow
+					.vak-xs-12.vak-sm-10.vak-md-9.vak-lg-7
+						h2.h2 Тренинг-практикум / Киев,<br class="visible-xs">НСК Олимпийский / 19 января
+						h1.h1 Жизнь на грани
+						h2.h2.bigger Как вести здоровый образ жизни, строить успешный бизнес и сохранять гармонию в семье. Только для тех, кто нацелен на успех и счастливую жизнь.
+						+button("vbtn vbtn-effect-shutter-vertical-out vbtn-corp", "single") Забронировать место
+		section.vsection.bg-grey--light
+			.vcontainer
+				+title Мы обучаем делать <br class="hidden-xs"> жизнь системной и успешной
+				.vrow
+					.vak-xs-12.vak-md-6
+						.text-block
+							p Вы встретите мало людей, которые счастливы иметь растущий бизнес, счастливую семью и прекрасную физическую форму. Это кажется просто, но в ритме жизни все иначе. Делаете бизнес, но выпадаете из семьи. Разбиваетесь в лепешку, чтобы иметь хорошее здоровье и крепкую семью, но не хватает концентрации на развитие бизнеса. И так по кругу.
+					.vak-xs-12.vak-md-6
+						.text-block
+							p В интернете много тренингов, где рассказывают как построить бизнес, не ругаться с женой или заниматься спортом. Но мы знаем как строить комплексную систему счастья, при которой вы будете полностью удовлетворены. И самое интересное, что ответы на все вопросы внутри вас. Мы просто поможем вам найти ответы и начать жить счастливо.
+				+button("vbtn vbtn-effect-shutter-horizontal-out vbtn-corp", "single", "center") Начать жить по-другому
+		section.vsection
+			.vcontainer
+				+title Из чего состоит ваше счастье
+				.vrow
+					.cf
+						+column("img/otnosh.png", "Отношения") Это фундамент вашего счастья. Сложно быть счастливым, если вы не находите общий язык с супругой, детьми и близкими. Мы поможем вам разобраться в том, с чем кажется разобраться невозможно. Личная жизнь станет фундаментом и стимулом для вашего развития.
+						+column("img/heart.png", "Здоровье") На личную жизнь и бизнес нужно много сил. Вспомните, бывало такое, что планов миллион, а сил на это все нет? Чувствуете усталость, слабость духа и нежелание двигаться вперед. Наши спикеры расскажут, как получить максимально здоровый организм и быть в тонусе для реализации своих идей.
+						+column("img/money.png", "Бизнес") Качество отношений и здоровье зависит от ваших успехов на работе. Но верно и обратне, чем лучше ваше здоровье и более гармоничны отношения с близкими, тем успешнее будет ваше дело. Наши тренера по персональной эффективности расскажут, как запустить ваш бизнес на новый уровень, используя собственный потенциал.
+				+button("vbtn vbtn-effect-shutter-horizontal-out vbtn-corp", "single", "center") Узнать свою систему счастья
+		section.vsection.bg-grey--light
+			.vcontainer
+				.vrow
+					.vak-xs-12.vak-md-4.working-wrap
+						+title С вами на тренинге будут работать
+					+work("img/man1.png", "Николай Сапсан") 
+						p Основатель и президент тренинговой компании O.VITTA, бизнес-тренер с более 20-ты летним опытом.
+						p Николай помогает развить личную эффективность людям, которые почувствовали, что хотят перемен и качественно лучшей жизни. Эксперт по персональной эффективности и коммуникации, автор уникальных курсов: «Формат», «Бизнес-формат», «Акцент». Специализация: лидерство и персональная эффективность, переговоры и продажи, коммуникация и взаимодействие.
+					+work("img/man2.png", "Игорь Папуша")
+						p Основатель «Восточно-Европейского института коучинга», эксперт в области саморазвития и персональной эффективности.
+						p Опыт работы с аудиторией — более 20 лет. Кандидат филологических наук. Стипендиат Гарвардского университета (2004-2005).
+		section.vsection
+			.vcontainer
+				.vrow
+					.vak-xs-12.vak-md-5
+						+title Стоимость участия<br class="hidden-xs"> в тренинге
+						.price 250 <sub>грн</sub>
+					.vak-xs-12.vak-md-7.vak-lg-6.vpull-lg-right
+						.vmain-form-wrapper
+							p.vmain-form-title Регистрация на тренинг-практикум
+							include includes/form/form
+		section.vsection.map
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1270.7061372273533!2d30.518631258347085!3d50.43342099486827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cf02b2b3a94f%3A0x2c642a7eb6c537ce!2z0LLRg9C70LjRhtGPINCS0LXQu9C40LrQsCDQktCw0YHQuNC70YzQutGW0LLRgdGM0LrQsCwgNTUsINCa0LjRl9CyLCAwMjAwMA!5e0!3m2!1sru!2sua!4v1484326104662" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
+			.vcontainer
+				.vrow
+					.vak-xs-12.vak-md-6.vak-lg-5
+						.map-text
+							p.map-title Контакты
+							.map-inf
+								p.map-tel
+									a(href="tel: +380671966740") 067 196 67 40
+								p.map-email
+									a(href="mailto: info@ym.kiev.ua") INFO@YM.KIEV.UA
+							.map-place
+								p ул. Большая Васильковская, 55
+		// MODAL FORM
+		.vmodal.fade#modalform
+			.vmodal-dialog
+				.vmodal-header
+					button(type="button" class="vmodal-close" data-close="vmodal") &times;
+					p.vmodal-title Заголовок_формы
+					p.vmodal-p Текст_формы
+				.vmodal-body
+					include includes/form/form
