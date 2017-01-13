@@ -12,7 +12,7 @@
     text-align: left;
     width: 100%;
     max-width: 100%;
-    padding: 22px 15px;
+    padding: 15px;
     margin-bottom: 20px;
     color: #000;
     font-size: 17px;
@@ -21,6 +21,9 @@
     @extend .block-inline;
     @extend .regular;
     @extend .transition;
+    &:focus{
+      border-color: setColor(corp);
+    }
   }
   .vbtn{
     width: 100%;
@@ -28,6 +31,7 @@
   }
   &-wrapper{
     @extend %shadow;
+    padding: 30px 15px;
     @include resp-min(md){
       padding: 60px 70px;
     }
@@ -36,5 +40,13 @@
     font-size: 23px;
     margin-bottom: 20px;
     @extend .bold;
+  }
+  @include resp-min(sm){
+    input{
+      padding: 22px 15px;
+    }
+  }
+  &-modal{
+    
   }
 }

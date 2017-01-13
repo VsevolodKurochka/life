@@ -522,7 +522,7 @@ End:  Connect fonts
   background-color: #f2f2f2;
 }
 
-.vmain-form-wrapper, .map-text {
+.vmain-form-wrapper, .map-text, .vmodal-dialog {
   background-color: #fff;
   box-shadow: 0 32px 81px rgba(0, 1, 1, 0.2);
   border-radius: 3px;
@@ -648,7 +648,7 @@ End:  Connect fonts
   text-align: left;
   width: 100%;
   max-width: 100%;
-  padding: 22px 15px;
+  padding: 15px;
   margin-bottom: 20px;
   color: #000;
   font-size: 17px;
@@ -656,9 +656,17 @@ End:  Connect fonts
   outline: none;
 }
 
+.vmain-form input:focus {
+  border-color: #f04128;
+}
+
 .vmain-form .vbtn {
   width: 100%;
   margin-top: 25px;
+}
+
+.vmain-form-wrapper {
+  padding: 30px 15px;
 }
 
 @media (min-width: 1025px) {
@@ -670,6 +678,12 @@ End:  Connect fonts
 .vmain-form-title {
   font-size: 23px;
   margin-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+  .vmain-form input {
+    padding: 22px 15px;
+  }
 }
 
 .list li:after {
@@ -1061,6 +1075,12 @@ End:  START FOOTER
   margin-bottom: 15px;
 }
 
+@media (max-width: 1024px) {
+  .working-wrap:not(:last-child) {
+    margin-bottom: 30px;
+  }
+}
+
 @media (min-width: 1025px) {
   .working-image {
     margin-bottom: 30px;
@@ -1076,26 +1096,94 @@ End:  START FOOTER
   font-size: 24px;
 }
 
-.map {
-  padding: 0;
-  min-height: 715px;
+@media (max-width: 1024px) {
+  .price {
+    margin-bottom: 30px;
+    text-align: center;
+  }
 }
 
-.map iframe {
+.map {
+  padding: 0;
+}
+
+.map a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.map-iframe {
   position: absolute;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
+  border: 0;
+  z-index: 2;
 }
 
-@media (min-width: 1025px) {
+.map-text {
+  padding: 30px 15px;
+}
+
+.map-column {
+  z-index: 3;
+}
+
+.map-title {
+  line-height: 1;
+  font-size: 30px;
+}
+
+@media (max-width: 767px) {
+  .map-text {
+    margin-left: -15px;
+    margin-right: -15px;
+    text-align: center;
+  }
+  .map-inf {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  .map-inf a:not(:last-child) {
+    margin-bottom: 15px;
+  }
+  .map-place {
+    font-size: 17px;
+  }
+  .map-iframe {
+    display: none !important;
+  }
+}
+
+@media (min-width: 768px) {
   .map-text {
     margin-top: 80px;
-    padding: 100px 15px 100px 60px;
+    margin-bottom: 80px;
+    padding: 60px 30px;
   }
   .map-title {
     font-size: 60px;
+  }
+  .map-tel {
+    font-size: 32px;
+  }
+  .map-email {
+    font-size: 24px;
+  }
+  .map-inf {
+    margin-top: 40px;
+    margin-bottom: 30px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .map {
+    min-height: 630px;
+  }
+  .map-text {
+    padding: 100px 15px 100px 60px;
   }
 }
 
@@ -1133,9 +1221,6 @@ End:  START FOOTER
 .vmodal-dialog {
   width: 100%;
   margin: 70px auto;
-  border-radius: 6px;
-  background-color: #fff;
-  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
   outline: 0;
   opacity: 0;
   -webkit-transform: scale(0.7) translate(0, -150%);
@@ -1258,7 +1343,8 @@ End:  START FOOTER
 
 @media (min-width: 768px) {
   .vmodal-dialog {
-    width: 400px;
+    width: 540px;
+    padding: 15px 85px 25px 55px;
   }
   .vmodal-dialog.big {
     width: 600px;

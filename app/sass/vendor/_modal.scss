@@ -36,11 +36,9 @@
   &-dialog{
     @extend .relative;
     @extend .transition;
+    @extend %shadow;
     width: 100%;
     margin: 70px auto;
-    border-radius: 6px;
-    background-color: setColor(light);
-    box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
     outline: 0;
     opacity: 0;
     transform: scale(0.7) translate(0, -150%);
@@ -161,7 +159,8 @@
   }
   @include resp-min(sm){
     &-dialog{
-      width: 400px;
+      width: 540px;
+      padding: 15px 85px 25px 55px;
       &.big{
         width: 600px;
         margin: 30px auto;

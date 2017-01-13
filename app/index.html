@@ -105,7 +105,7 @@
           </div>
         </div>
                 <div class="vbtn-single text-center">
-                  <button class="vbtn vbtn-effect-shutter-horizontal-out vbtn-corp" data-modal="vmodal" data-modal-target="#modalform">Узнать свою систему счастья
+                  <button class="vbtn vbtn-effect-skew vbtn-corp" data-modal="vmodal" data-modal-target="#modalform">Узнать свою систему счастья
                   </button>
                 </div>
       </div>
@@ -153,7 +153,7 @@
             <div class="price">250 <sub>грн</sub></div>
           </div>
           <div class="vak-xs-12 vak-md-7 vak-lg-6 vpull-lg-right">
-            <div class="vmain-form-wrapper">
+            <div class="vmain-form-wrapper max-sm-negative">
               <p class="vmain-form-title">Регистрация на тренинг-практикум</p>
               <form class="vmain-form" action="">
                 <input type="text" placeholder="Имя">
@@ -166,31 +166,59 @@
         </div>
       </div>
     </section>
-    <section class="vsection map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1270.7061372273533!2d30.518631258347085!3d50.43342099486827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cf02b2b3a94f%3A0x2c642a7eb6c537ce!2z0LLRg9C70LjRhtGPINCS0LXQu9C40LrQsCDQktCw0YHQuNC70YzQutGW0LLRgdGM0LrQsCwgNTUsINCa0LjRl9CyLCAwMjAwMA!5e0!3m2!1sru!2sua!4v1484326104662" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
+    <section class="vsection map">
+      <script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;key=AIzaSyCbuMIiKybptj_jGmSYiWBOwkv2FtPy_0o"></script>
+      <script>
+        // The latitude and longitude of your business / place
+        var position = [50.433421, 30.519833];
+        function showGoogleMaps() { 
+            var latLng = new google.maps.LatLng(position[0], position[1]);
+            var myLatLng;
+            if ( document.body.clientWidth > 992) {
+            	myLatLng = new google.maps.LatLng(50.433421, 30.519833);
+            }else{
+            	myLatLng = latLng;
+            }
+            var mapOptions = {
+                zoom: 17, // initialize zoom level - the max value is 21
+                streetViewControl: false, // hide the yellow Street View pegman
+                scaleControl: false, // allow users to zoom the Google Map
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                center: myLatLng,
+                mapTypeControl: false,
+        				scrollwheel: false
+            }; 
+            var map = new google.maps.Map(document.getElementById('googlemaps'), mapOptions); 
+            // Show the default red marker at the location
+            var marker = new google.maps.Marker({
+                position: latLng,
+                map: map,
+                draggable: false,
+                title: 'вулиця Велика Васильківська, 55',
+                animation: google.maps.Animation.DROP
+            });
+        }
+        google.maps.event.addDomListener(window, 'load', showGoogleMaps);
+      </script>
+      <div class="map-iframe" id="googlemaps"></div>
       <div class="vcontainer">
         <div class="vrow">
-          <div class="vak-xs-12 vak-md-6 vak-lg-5">
+          <div class="vak-xs-12 vak-md-6 vak-lg-5 map-column">
             <div class="map-text">
               <p class="map-title">Контакты</p>
-              <div class="map-inf">
-                <p class="map-tel"><a href="tel: +380671966740">067 196 67 40</a></p>
-                <p class="map-email"><a href="mailto: info@ym.kiev.ua">INFO@YM.KIEV.UA</a></p>
-              </div>
-              <div class="map-place">
-                <p>ул. Большая Васильковская, 55</p>
-              </div>
+              <div class="map-inf"><a class="map-tel" href="tel: +380671966740">067 196 67 40</a><a class="map-email" href="mailto: info@ym.kiev.ua">INFO@YM.KIEV.UA</a></div>
+              <p class="map-place">ул. Большая Васильковская, 55</p>
             </div>
           </div>
         </div>
       </div>
     </section>
     <!-- MODAL FORM-->
-    <div class="vmodal fade" id="modalform">
+    <div class="vmodal vmain-form-modal fade" id="modalform">
       <div class="vmodal-dialog">
+        <button class="vmodal-close" type="button" data-close="vmodal">&times;</button>
         <div class="vmodal-header">
-          <button class="vmodal-close" type="button" data-close="vmodal">&times;</button>
-          <p class="vmodal-title">Заголовок_формы</p>
-          <p class="vmodal-p">Текст_формы</p>
+          <p class="vmain-form-title">Cпасибо за заявку, <br class="hidden-xs"> наш менеджер свяжется с вами в ближайшее время</p>
         </div>
         <div class="vmodal-body">
           <form class="vmain-form" action="">
