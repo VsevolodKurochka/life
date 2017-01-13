@@ -1,151 +1,163 @@
-.text-block{
-  p:not(:last-child){
-    margin-bottom: 20px;
-  }
-}
-%titleDefault{
-	font-size: 20px;
-	@include resp-min(sm){
-		font-size: 24px;
-	}
-}
-.column{
-	&-header{
-		margin-bottom: 15px;
-		&-img{
-			font-size: 0;
-		}
-		&-img,
-		&-text{
-			display: inline-block;
-			vertical-align: middle;
-		}
-		&-text{
-			@extend .bold;
-			@extend %titleDefault;
-			line-height: 1;
-			margin-left: 15px;
-		}
-	}
-	@include resp-min(sm){
-		&-header{
-			margin-bottom: 30px;
-			&-text{
-				margin-left: 30px;
-			}
-		}
-	}
-	@include resp-max(md){
-		&-wrap:not(:last-child){
-			margin-bottom: 30px;
-		}
-	}
-}
-.working{
+.text{
 	&-title{
-		@extend %titleDefault;
-	}
-	&-image{
-		font-size: 0;
-		margin-bottom: 15px;
-	}
-	@include resp-max(md){
-		&-wrap{
-			&:not(:last-child){
-				margin-bottom: 30px;
-			}
-		}
-	}
-	@include resp-min(md){
-		&-image{
-			margin-bottom: 30px;
-		}
-	}
-}
-.price{
-	font-size: 60px;
-	line-height: 1;
-	@extend .bold;
-	sub{
-		font-size: 24px;
-	}
-	@include resp-max(md){
-		margin-bottom: 30px;
-		text-align: center;
-	}
-}
-.map{
-	padding: 0;
-	a{
-		display: block;
-		text-decoration: none;
-		color: inherit;
-	}
-	&-iframe{
-		position: absolute;
-		left: 0;
-		top: 0;
-		width: 100%;
-		height: 100%;
-		border: 0;
-		z-index: 2;
-	}
-	&-text{
-		padding: 30px 15px;
-		@extend %shadow;
 		@extend .bold;
 	}
-	&-column{
-		z-index: 3;
-	}
-	&-title{
-		line-height: 1;
-		font-size: 30px;
-	}
-	@include resp-max(sm){
-		&-text{
-			margin-left: -15px;
-			margin-right: -15px;
-			text-align: center;
-		}
-		&-inf{
-			margin-top: 30px;
-			margin-bottom: 30px;
-			a:not(:last-child){
-				margin-bottom: 15px;
-			}
-		}
-		&-place{
-			font-size: 17px;
-		}
-		&-iframe{
-			display: none !important;
+	&-block{
+		p:not(:last-child){
+			margin-bottom: 20px;
 		}
 	}
 	@include resp-min(sm){
-		&-text{
-			margin-top: 80px;
-			margin-bottom: 80px;
-			padding: 60px 30px;
-		}
 		&-title{
-			font-size: 60px;
-		}
-		&-tel{
-			font-size: 32px;
-		}
-		&-email{
-			font-size: 24px;
-		}
-		&-inf{
-			margin-top: 40px;
-			margin-bottom: 30px;
+			font-size: 20px;
 		}
 	}
 	@include resp-min(md){
-		min-height: 630px;
-		&-text{
-			padding: 100px 15px 100px 60px;
+		&-title{
+			font-size: 24px;
+			line-height: 38px;
 		}
+	}
+}
+.color{
+	&-red{
+		color: setColor(red);
+	}
+}
+.man{
+	&-name{
+		font-size: 25px;
+	}
+	&-quote{
+		color: #2b306b;
+		font-size: 20px;
+	}
+	&-tagline{
+		margin-top: 15px;
+		margin-bottom: 15px;
+	}
+	&-wrap,
+	&-img-inner{
+		font-size: 0;
+	}
+	&-img{
+		display: block;
+		margin-top: 30px;
+		&-inner{
+			display: block;
+			
+		}
+	}
+	@include resp-max(sm){
+		max-height: 300px;
+		&-do,
+		&-name{
+			margin-top: 15px;
+		}
+		&-img-inner{
+			margin-bottom: 30px;
+			&:last-child{
+				margin-bottom: 0;
+			}
+		}
+	}
+	@include resp-min(sm){
+		&-name{
+			font-size: 36px;
+		}
+		
+		&-do{
+			margin-top: 20px;
+		}
+		&-quote{
+			font-size: 25px;
+		}
+		&-img{
+			margin-top: 40px;
+			&-inner{
+				display: inline-block;
+				vertical-align: middle;
+				&:last-child{
+					margin-right: 0;
+				}
+			}
+		}
+		@include resp-max(md){
+			&-img-inner{
+				margin-right: 15px;
+			}
+		}
+	}
+	@include resp-min(md){
+		&-img{
+			&-inner{
+				margin-right: 30px;
+			}
+		}
+		@include resp-max(lg){
+			&-img{
+				&-inner{
+					margin-right: 15px;
+					max-width: 20%;
+				}
+			}
+		}
+	}
+	@include resp-min(lg){
+		&-do{
+			margin-top: 44px;
+		}
+		&-tagline{
+			margin-bottom: 35px;
+		}
+		&-quote{
+			font-size: 30px;
+			line-height: 52px;
+		}
+	}
+}
+.case{
+	margin-bottom: 30px;
+	&:last-child{
+		margin-bottom: 0;
+	}
+	p:not(.case-title){
+		margin-bottom: 30px;
+		&:last-child{
+			margin-bottom: 0;
+		}
+	}
+	&-title{
+		font-size: 18px;
+		margin-bottom: 15px;
+		@extend .bold;
+	}
+	@include resp-min(md){
+		margin-bottom: 40px;
+		&-title{
+			font-size: 20px;
+			margin-bottom: 20px;
+			
+		}
+	}
+	@include resp-min(lg){
+		&-title{
+			padding-right: 40px;
+		}
+	}
+}
+.social{
+	font-size: 0;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	&-inner{
+		display: inline-block;
+		vertical-align: middle;
+		font-size: 0;
+		margin-right: 20px;
+	}
+	@include resp-min(sm){
+		margin-top: 50px;
+		margin-bottom: 50px;
 	}
 }

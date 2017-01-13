@@ -9,7 +9,8 @@ $h2-font-sizes: (
 $vtitle: (
   xs:   32px,
   sm:   37px,
-  md:   42px
+  md:   42px,
+  lg:   60px
 );
 .h1{
   font-size: 28px;
@@ -34,7 +35,8 @@ $vtitle: (
 }
 .vtitle{
   line-height: 1.2;
-  font-size: 28px;
+  font-size: 22px;
+  @extend .regular;
   @include font-size($vtitle);
   &-line{
     position: relative;
@@ -42,7 +44,7 @@ $vtitle: (
     margin-bottom: 15px;
     &:after{
       @extend .pseudo;
-      left: 0;
+      left: 50%;
       top: 100%;
       width: 39px;
       height: 2px;
@@ -52,6 +54,7 @@ $vtitle: (
       padding-bottom: 15px;
       margin-bottom: 50px;
       &:after{
+        margin-left: -51px;
         width: 102px;
         height: 4px;
       }

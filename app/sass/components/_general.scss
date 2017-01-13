@@ -1,12 +1,9 @@
 body{
   color: setColor(black);
-  @extend .lato;
+  @extend .sans;
   @extend .regular;
-  font-size: 18px;
-  line-height: 1.42857143;
-  @include resp-min(sm){
-    font-size: 20px;
-  }
+  font-size: 16px;
+  line-height: 1.875;
 }
 img{
   @extend .block-inline;
